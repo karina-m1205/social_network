@@ -8,7 +8,7 @@ const deleteUserByIdRouter = express.Router();
 
 
 registrationRouter.post("/", (req, res) => {
-    const { username, password } = { ...req.body };
+    const { username, password } = req.body;
     if (!username || !password) {
         return res.status(400).json({ message: "fields required" });
     }
@@ -28,7 +28,7 @@ registrationRouter.post("/", (req, res) => {
 })
 
 loginRouter.post("/", (req, res) => {
-    const { username, password } = { ...req.body };
+    const { username, password } = req.body;
     if (!username || !password) {
         return res.status(400).json({ message: "fields required" });
     }
